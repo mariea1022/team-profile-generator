@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-
 const fs = require("fs");
 
 const Manager = require("./lib/Manager")
@@ -31,7 +30,7 @@ const managerQuestions = [
     }
 ];
 
-const mainQuestions = [
+const mainQuestionsArray = [
     {
         type: "list",
         message: "What do you want to do next?",
@@ -90,33 +89,47 @@ let employees = [
 
 ]
 
+function to initialize app
 function init() {
     inquirer.prompt(managerQuestions).then((answers) => {
-        let employee = new Manager(answers.teamManagerName, answers.teamManagerId, answers.teamManagerEmail, answers.teamManagerOfficeNumber);
+        let generatedString = generateTeamProfile(answers)
+            fs.writeFile('index.html', generatedString, (err) =>
+                err ? console.error(err) : console.log("index.html generated successfully!"));
+
+        let employee = new Manager(answers.teamManagerName, answers.teamManagerID, answers.teamManagerEmail, answers.teamManagerOfficeNumber);
         employees.push(employee);
 
-        inquirer.prompt(mainQuestions).then((answers) => {
+        mainQuestions();
+    }
+    )
+}
+  
+function mainQuestions() {
+    inquirer.prompt(mainQuestionsArray).then((answers) => {
             if (answers.action === "add an engineer") {
                 inquirer.prompt(engineerQuestions).then((answers) => {
-                let employee = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGitHub);
+                let employee = new Engineer(answers.engineerName, answers.engineerID, answers.engineerEmail, answers.engineerGitHub);
                 employees.push(employee);
                 console.log(employees);
                 console.log("add an engineer 1");
+                mainQuestions()
             })
-            } else if (answers.action === "add an intern") {
+            } 
+            else if (answers.action === "add an intern") {
                 inquirer.prompt(internQuestions).then((answers) => {
-                let employee = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+                let employee = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
                 employees.push(employee);
+                console.log(employees);
                 console.log("add an intern 1")
+                mainQuestions()
             })
             } else if (answers.action === "finish building my team") {
-                console.log("finished") }
+                console.log("finished")
+                let generatedString = generateTeamProfile(answers)
+                fs.writeFile('index.html', generatedString, (err) =>
+                    err ? console.error(err) : console.log("index.html generated successfully!"))
+            }
         })
-
-        // let generatedString = generateTeamProfile(answers)
-        // fs.writeFile('index.html', generatedString, (err) =>
-        // err ? console.error(err) : console.log("index.html generated successfully!"))
-    })
 }
 
-init()
+init();

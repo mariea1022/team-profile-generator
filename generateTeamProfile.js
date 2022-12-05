@@ -1,5 +1,6 @@
 function generateTeamProfile(data) {
     // first part 
+    console.log(data)
     let html = `<html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -11,6 +12,7 @@ function generateTeamProfile(data) {
     <body>`; 
 
     for(let i = 0; i<data.length; i++) {
+        
         var employeeType = data[i];
         if(employeeType.getRole() === "Manager") {
             // html+= 
