@@ -43,7 +43,7 @@ const mainQuestions = [
 const engineerQuestions = [
     {
         type: "input",
-        message: "Enter eningeer's name:",
+        message: "Enter engineer's name:",
         name: "engineerName",
     },
     {
@@ -97,12 +97,18 @@ function init() {
 
         inquirer.prompt(mainQuestions).then((answers) => {
             if (answers.action === "add an engineer") {
+                inquirer.prompt(engineerQuestions).then((answers) => {
                 let employee = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGitHub);
                 employees.push(employee);
                 console.log(employees);
                 console.log("add an engineer 1");
+            })
             } else if (answers.action === "add an intern") {
+                inquirer.prompt(internQuestions).then((answers) => {
+                let employee = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+                employees.push(employee);
                 console.log("add an intern 1")
+            })
             } else if (answers.action === "finish building my team") {
                 console.log("finished") }
         })
