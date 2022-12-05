@@ -7,7 +7,6 @@ const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
 
 let generateTeamProfile = require("./generateTeamProfile");
-// const { listenerCount } = require("process");
 
 const managerQuestions = [
     {
@@ -61,6 +60,29 @@ const engineerQuestions = [
         type: "input",
         message: "Enter engineer's GitHub:",
         name: "engineerGitHub",
+    }
+]
+
+const internQuestions = [
+    {
+        type: "input",
+        message: "Enter intern's name:",
+        name: "internName",
+    },
+    {
+        type: "input",
+        message: "Enter intern's ID:",
+        name: "internID",
+    },
+    {
+        type: "input",
+        message: "Enter intern's email's address:",
+        name: "internEmail",
+    },
+    {
+        type: "input",
+        message: "Enter intern's School:",
+        name: "internSchool",
     }
 ]
 
