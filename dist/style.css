@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+    color: white;
+    background-color: red;
+    padding: 20px;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}

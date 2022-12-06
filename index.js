@@ -6,6 +6,7 @@ const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
 
 let generateTeamProfile = require("./generateTeamProfile");
+let generateManagerProfile = require("./generateTeamProfile")
 
 const managerQuestions = [
     {
@@ -89,16 +90,11 @@ let employees = [
 
 ]
 
-function to initialize app
+// function to initialize app
 function init() {
     inquirer.prompt(managerQuestions).then((answers) => {
-        let generatedString = generateTeamProfile(answers)
-            fs.writeFile('index.html', generatedString, (err) =>
-                err ? console.error(err) : console.log("index.html generated successfully!"));
-
         let employee = new Manager(answers.teamManagerName, answers.teamManagerID, answers.teamManagerEmail, answers.teamManagerOfficeNumber);
         employees.push(employee);
-
         mainQuestions();
     }
     )
@@ -111,7 +107,6 @@ function mainQuestions() {
                 let employee = new Engineer(answers.engineerName, answers.engineerID, answers.engineerEmail, answers.engineerGitHub);
                 employees.push(employee);
                 console.log(employees);
-                console.log("add an engineer 1");
                 mainQuestions()
             })
             } 
@@ -120,12 +115,12 @@ function mainQuestions() {
                 let employee = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
                 employees.push(employee);
                 console.log(employees);
-                console.log("add an intern 1")
                 mainQuestions()
             })
             } else if (answers.action === "finish building my team") {
                 console.log("finished")
-                let generatedString = generateTeamProfile(answers)
+                let generatedString = generateTeamProfile(employees)
+                console.log(generatedString)
                 fs.writeFile('index.html', generatedString, (err) =>
                     err ? console.error(err) : console.log("index.html generated successfully!"))
             }
