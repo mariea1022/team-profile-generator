@@ -10,44 +10,57 @@ function generateTeamProfile(data) {
         <title>Team Profile Generator</title>
     </head>
     <body>
-    <header><h1>My Team</h1></header>`; 
+    <header><h1>My Team</h1></header>
+    <div class="mainContainer">`; 
 
     for(let i = 0; i<data.length; i++) {
         let employeeType = data[i];
         console.log(data[i])
         if (employeeType.getRole() === "Manager") {
-        html += `<div class="mainContainer">
+        html += `<div class="cardContainer">
         <div class="card" style="width: 18rem;">
-        <div class="card-header">${data[i].name}</div>
+        <div class="card-header">
+        <h2>${data[i].name}</h2> 
+        <h3>Manager</h3>
+        </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${data[i].id}</li>
                 <li class="list-group-item">Email: ${data[i].email}</li>
                 <li class="list-group-item">Office number: ${data[i].officeNumber}</li>
             </ul>
+         </div>
          </div>`
         } else if (employeeType.getRole() === "Engineer") {
             // html+= 
-            html += `
+            html += `<div class="cardContainer">
             <div class="card" style="width: 18rem;">
-            <div class="card-header">${data[i].name}</div>
+            <div class="card-header">
+            <h2>${data[i].name}</h2> 
+            <h3>Engineer</h3>
+            </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${data[i].id}</li>
                     <li class="list-group-item">Email: ${data[i].email}</li>
                     <li class="list-group-item">GitHub: ${data[i].github}</li>
                 </ul>
+            </div>
             </div>`
         } else if(employeeType.getRole() === "Intern") {
             // html+= 
-            html += `<div class="card" style="width: 18rem;">
-            <div class="card-header">${data[i].name}</div>
+            html += `<div class="cardContainer">
+            <div class="card" style="width: 18rem;">
+            <div class="card-header">
+            <h2>${data[i].name}</h2> 
+            <h3>Intern</h3>
+            </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${data[i].id}</li>
                     <li class="list-group-item">Email: ${data[i].email}</li>
                     <li class="list-group-item">School: ${data[i].school}</li>
                 </ul>
+            </div>
             </div>`
         }
-        //...
     }
 
     // the rest of the html

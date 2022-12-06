@@ -1,12 +1,30 @@
 h1 {
     text-align: center;
     color: white;
-    background-color: red;
+    background-color: rgba(248, 49, 49, 0.812);
     padding: 20px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24px;
 }
 
 .mainContainer {
     display: flex;
     flex-direction: row;
-    align-self: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cardContainer {
+    padding: 15px;
+}
+
+.card-header {
+    background-color: rgba(31, 31, 255, 0.789);
+    color: white;
 }
