@@ -21,7 +21,9 @@ h3 {
 }
 
 .cardContainer {
-    padding: 15px;
+    margin: 40px;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgb(212, 212, 212);
 }
 
 .card-header {

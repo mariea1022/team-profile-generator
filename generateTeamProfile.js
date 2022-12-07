@@ -1,3 +1,6 @@
+// function to generate the html page, using employees array as the argument/parameter
+// used font awesome for the icons
+// used bootstrap for the cards
 function generateTeamProfile(data) {
     console.log(data);
     let html = `<html lang="en">
@@ -5,6 +8,7 @@ function generateTeamProfile(data) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/992b8b8f31.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="./dist/style.css">
         <title>Team Profile Generator</title>
@@ -21,7 +25,7 @@ function generateTeamProfile(data) {
         <div class="card" style="width: 18rem;">
         <div class="card-header">
         <h2>${data[i].name}</h2> 
-        <h3>Manager</h3>
+        <h3><i class="fa-solid fa-mug-hot"></i> Manager</h3>
         </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${data[i].id}</li>
@@ -36,7 +40,7 @@ function generateTeamProfile(data) {
             <div class="card" style="width: 18rem;">
             <div class="card-header">
             <h2>${data[i].name}</h2> 
-            <h3>Engineer</h3>
+            <h3><i class="fa-solid fa-glasses"></i> Engineer</h3>
             </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${data[i].id}</li>
@@ -51,7 +55,7 @@ function generateTeamProfile(data) {
             <div class="card" style="width: 18rem;">
             <div class="card-header">
             <h2>${data[i].name}</h2> 
-            <h3>Intern</h3>
+            <h3><i class="fa-solid fa-user-graduate"></i> Intern</h3>
             </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${data[i].id}</li>
