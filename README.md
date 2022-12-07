@@ -39,7 +39,7 @@ Initiated npm and installed Inquirer 8.2.4. and Jest.
 
 ## Usage
 
-[Here is a walkthrough video that demonstrates the functionality of the team profile generator.](https://drive.google.com/file/d/1LeP7N_X5sl9r0GvqknjHoClKO8ie-8Sr/view)
+[Here is a walkthrough video that demonstrates the functionality of the team profile generator.](https://drive.google.com/file/d/11P8_ksRf5ydln4xgIHDuvPaFwNRN36ha/view)
 
 The application will be invoked by using the following command:
 
