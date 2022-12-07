@@ -1,7 +1,7 @@
 # Challenge 10: Object-Oriented Programming: Team Profile Generator
 
 ## Description
-To build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. .
+To build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
 
 ## User Story
 
@@ -39,7 +39,7 @@ Initiated npm and installed Inquirer 8.2.4. and Jest.
 
 ## Usage
 
-[Here is a walkthrough video that demonstrates the functionality of the team profile generator.](https://)
+[Here is a walkthrough video that demonstrates the functionality of the team profile generator.](https://drive.google.com/file/d/1LeP7N_X5sl9r0GvqknjHoClKO8ie-8Sr/view)
 
 The application will be invoked by using the following command:
 
