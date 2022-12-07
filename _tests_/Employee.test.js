@@ -15,7 +15,7 @@ describe('Employee class', () => {
             // gets name from getName()
             it('should get employee name/ getName method', () => {
                 // arrange
-                const employee = new Employee('Jared', 1000, 'jared@gmail.com')
+                const employee = new Employee('Jared', 1000, 'jared@gmail.com');
 
                 // act & assert
                 expect(employee.getName()).toEqual(expect.any(String));
@@ -23,7 +23,7 @@ describe('Employee class', () => {
             // gets id from getId() 
             it('should get employee ID/ getID method', () => {
                 // arrange
-                const employee = new Employee('Jared', 1000, 'jared@gmail.com')
+                const employee = new Employee('Jared', 1000, 'jared@gmail.com');
                 
                 // act & assert
                 expect(employee.getId()).toEqual(expect.any(Number));
@@ -31,7 +31,7 @@ describe('Employee class', () => {
             // gets emails from getEmail()
             it('should get employee email/ getEmail method', () => {
                 // arrange
-                const employee = new Employee('Jared', 1000, 'jared@gmail.com')
+                const employee = new Employee('Jared', 1000, 'jared@gmail.com');
                 
                 // act & assert
                 expect(employee.getEmail()).toEqual(expect.stringContaining(employee.email.toString()));

@@ -1,12 +1,12 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+
 const Manager = require("./lib/Manager")
 const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
 
 let generateTeamProfile = require("./generateTeamProfile");
-let generateManagerProfile = require("./generateTeamProfile")
 
 const managerQuestions = [
     {
@@ -15,7 +15,7 @@ const managerQuestions = [
         name: "teamManagerName",
     },
     {
-        type: "input",
+        type: "number",
         message: "Enter team manager's employee ID:",
         name: "teamManagerID",
     },
@@ -25,7 +25,7 @@ const managerQuestions = [
         name: "teamManagerEmail",
     },
     {
-        type: "input",
+        type: "number",
         message: "Enter team manager's office number:",
         name: "teamManagerOfficeNumber",
     }
@@ -47,7 +47,7 @@ const engineerQuestions = [
         name: "engineerName",
     },
     {
-        type: "input",
+        type: "number",
         message: "Enter engineer's ID:",
         name: "engineerID",
     },
@@ -70,7 +70,7 @@ const internQuestions = [
         name: "internName",
     },
     {
-        type: "input",
+        type: "number",
         message: "Enter intern's ID:",
         name: "internID",
     },
@@ -106,7 +106,7 @@ function mainQuestions() {
                 inquirer.prompt(engineerQuestions).then((answers) => {
                 let employee = new Engineer(answers.engineerName, answers.engineerID, answers.engineerEmail, answers.engineerGitHub);
                 employees.push(employee);
-                console.log(employees);
+                // console.log(employees);
                 mainQuestions()
             })
             } 
@@ -114,7 +114,7 @@ function mainQuestions() {
                 inquirer.prompt(internQuestions).then((answers) => {
                 let employee = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
                 employees.push(employee);
-                console.log(employees);
+                // console.log(employees);
                 mainQuestions()
             })
             } else if (answers.action === "finish building my team") {

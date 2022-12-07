@@ -2,7 +2,7 @@
 // used font awesome for the icons
 // used bootstrap for the cards
 function generateTeamProfile(data) {
-    console.log(data);
+    // console.log(data);
     let html = `<html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -19,7 +19,7 @@ function generateTeamProfile(data) {
 
     for(let i = 0; i<data.length; i++) {
         let employeeType = data[i];
-        console.log(data[i])
+        console.log(employeeType)
         if (employeeType.getRole() === "Manager") {
         html += `<div class="cardContainer">
         <div class="card" style="width: 18rem;">
