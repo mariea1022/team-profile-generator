@@ -25,7 +25,7 @@ function generateTeamProfile(data) {
         </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${data[i].id}</li>
-                <li class="list-group-item">Email: ${data[i].email}</li>
+                <li class="list-group-item">Email: <a href="mailto:${data[i].email}">${data[i].email}</a></li>
                 <li class="list-group-item">Office number: ${data[i].officeNumber}</li>
             </ul>
          </div>
@@ -40,8 +40,8 @@ function generateTeamProfile(data) {
             </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${data[i].id}</li>
-                    <li class="list-group-item">Email: ${data[i].email}</li>
-                    <li class="list-group-item">GitHub: ${data[i].github}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${data[i].email}">${data[i].email}</a></li>
+                    <li class="list-group-item">GitHub: <a href="https:github.com/${data[i].github}">${data[i].github}</a></li>
                 </ul>
             </div>
             </div>`
@@ -55,7 +55,7 @@ function generateTeamProfile(data) {
             </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${data[i].id}</li>
-                    <li class="list-group-item">Email: ${data[i].email}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${data[i].email}">${data[i].email}</a></li>
                     <li class="list-group-item">School: ${data[i].school}</li>
                 </ul>
             </div>
