@@ -17,8 +17,8 @@ describe('Intern class', () => {
             // arrange
             const intern = new Intern ('St. Nick', 5678, 'saintnick@abcd.com', 'North Pole University');
 
-                // act & assert
+                // act & assert    
                 expect(intern.getRole()).toEqual("Intern");
-})
-})
+        })
+    })
 })

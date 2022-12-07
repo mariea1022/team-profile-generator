@@ -26,6 +26,6 @@ describe('Engineer class', () => {
                 
                 // act & assert
                 expect(engineer.getRole()).toEqual("Engineer");
-})
-})
+        })
+    })
 })
