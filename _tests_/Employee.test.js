@@ -12,6 +12,14 @@ describe('Employee class', () => {
             expect(employee.id).toEqual(expect.any(Number));
             expect(employee.email).toEqual(expect.any(String));
         });
+            // gets name from getName()
+            it('should get employee name/ getName method', () => {
+                // arrange
+                const employee = new Employee('Jared', 1000, 'jared@gmail.com')
+
+                // act & assert
+                expect(employee.getName()).toEqual(expect.any(String));
+            })
             // gets id from getId() 
             it('should get employee ID/ getID method', () => {
                 // arrange
