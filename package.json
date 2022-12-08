@@ -4,7 +4,8 @@
   "description": "Challenge 10: Object-Oriented Programming: Team Profile Generator",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
